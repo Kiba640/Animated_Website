@@ -1,0 +1,273 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(213, 236, 236);
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#intro{
+    background-color: lightcyan;
+    width: 100 vw;
+    padding-top: 5%;
+}
+#name_animation{
+    text-align: center;
+}
+
+#spacer-1{
+    min-height: 300px;
+}
+#spacer{
+    min-height: 600px;
+}
+
+h1{
+    font-size: 100px;
+    text-align: center;
+}
+
+.introduction_box{
+    border: 6px lightskyblue;
+    background-color: lightblue;
+    border-style: solid;
+    border-radius: 5px;
+
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#animation_spacer{
+    padding-top: 80px;
+}
+#intro_spacer{
+    padding-top: 10px;
+}
+
+p{
+    /* padding-left: 50px; */
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+/* Birth CSS */
+
+#spacer_300{
+    padding-top: 300px;
+}
+#birth{
+    background-color: lightblue;
+    width: 100 vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+#birth_title{
+    margin-top: 0;
+    text-align: right;
+    grid-column: 8/10;
+}
+
+h2{
+    font-size: 40px;
+    
+    padding-top: 1em;
+}
+
+#lejeune_sign{
+    /* width: 900px; */
+
+    grid-column: 2/7;
+    grid-row: 7/9;
+    transform: rotateX(90deg);
+
+}
+
+#hospital{
+    /* width: 900px; */
+
+    grid-column: 6/10;
+    grid-row: 2;
+    transform: rotateX(90deg);
+    order: 1;
+    position: relative;
+}
+
+#car1{
+    grid-row: 6;
+    grid-column: 5/10;
+    order: 3;
+    position: relative;
+
+    transform: translate(150%);
+
+}
+#baby_img{
+    /* padding-top:2.5%; */
+    /* width:400px; */
+    /* padding-left:7.5%; */
+    /* transform: scale(0); */
+    grid-column: 4/6;
+    grid-row: 2/4;
+
+    /* height: 200%; */
+
+    transition: transform .5s ease;
+    transform: scale(0);
+    
+    
+}
+
+
+.translate_baby{
+    transform: scale(0);
+    animation: babySize 2s;
+   
+    animation-fill-mode: forwards;
+}
+
+@keyframes babySize {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#trigger_babymove{
+    grid-row: 5;
+}
+
+
+#z1{
+    transition: transform 1.2s ease-in-out;
+}
+
+.fadez {
+    transform: rotateZ(-15deg);
+}
+#z2{
+    transition: transform 1s ease-in-out;
+}
+
+.fadez2 {
+    transform: rotateZ(10deg);
+}
+#z3{
+    transition: transform 1.5s ease-in-out;
+}
+
+.fadez3 {
+    transform: rotateZ(-5deg);
+}
+
+#trigger_lj_sign, #trigger_hospital{
+    grid-row: 4;
+}
+
+
+
+#trigger_baby, #trigger_baby2, #trigger_baby3{
+    grid-row: 6;
+}
+
+
+
+.lj_rise{
+    /* transform: rotateX(0deg);
+    transform: rotateX(90deg);
+    transform-origin: bottom; */
+
+    animation: signRise 3s;
+    animation-delay: .1s;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+    animation-fill-mode: forwards;
+}
+
+@keyframes signRise {
+    from {
+        transform: rotateX(90deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+.hospital_rise{
+    /* transform: rotateX(0deg);
+    transform: rotateX(90deg);
+    transform-origin: bottom; */
+
+    animation: hosRise 2s;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+    animation-fill-mode: forwards;
+}
+
+@keyframes hosRise {
+    from {
+        transform: rotateX(90deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+
+#trigger_car1{
+    grid-row: 7;
+}
+.move_car{
+    animation: moveCar 7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveCar {
+    from {
+        translate: translate(150%);
+    }
+    to {
+        transform: translate(-300%);
+    }
+}
+
+
+#car1_frontwheel{
+
+    transition: transform 40s;
+    animation-iteration-count:infinite;
+
+}
+.spin_frontwheel{
+    transform: rotate(-19000deg);
+    /* x-offset | y-offset | z-offset */
+transform-origin: 180px 422px 0;
+animation-fill-mode: forwards;
+}
+
+#car1_backwheel{
+
+    transition: transform 40s;
+    animation-iteration-count:infinite;
+
+}
+.spin_backwheel{
+    transform: rotate(-19000deg);
+    /* x-offset | y-offset | z-offset */
+transform-origin: 838px 426px 0;
+animation-fill-mode: forwards;
+}
+
+#trigger_wheel{
+    grid-row:7;
+}
